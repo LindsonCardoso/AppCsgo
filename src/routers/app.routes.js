@@ -1,25 +1,28 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Login from '../pages/Login';
 import Home from '../pages/Home';
 
-const AuthStack = createStackNavigator();
+
+const AppStack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+
 
 function AppRoutes(){
     return(
-    <AppStack.Navigator 
-    
-    >
-        <AppStack.Screen 
+    <Tab.Navigator>
+        <Tab.Screen 
         name="Login" 
         component={Login}
         />
-        <AuthStack.Screen 
+        <Tab.Screen 
         name="Home" 
         component={Home}
         />
-    </AppStack.Navigator>
+    </Tab.Navigator>
     );
 }
 

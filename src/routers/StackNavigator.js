@@ -2,8 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import LogIn from '../pages/Login';
-import Home from '../pages/Home';
-
+import MyTabs from './TabNavigator'
 const AuthStack = createStackNavigator();
 
 function AuthRoutes(){
@@ -14,18 +13,13 @@ function AuthRoutes(){
         component={LogIn}
         options={{headerShown: false}}
         />
-        <AuthStack.Screen 
-        name="Home" 
-        component={Home}
         
-        options={{
-            title: 'Players',
-            headerTintColor: '#fff',
-            headerShown: true,
-             headerTransparent:true,
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },}}
+        <AuthStack.Screen 
+        name="MyTabs" 
+       
+        component={MyTabs}
+    
+            options={{headerShown: false}}
         />
     </AuthStack.Navigator>
     );}

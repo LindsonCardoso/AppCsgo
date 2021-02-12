@@ -1,13 +1,23 @@
 import React from 'react'
-import {View, Text} from 'react-native'
-import {Container,FlatList} from './styles'
-import CardPlayer from '../../Componentes/CardPlayer'
 
-function Home(){
+import {Container,FlatList,Text,TouchBack,ConteinerMenu} from './styles'
+import CardPlayer from '../../Componentes/CardPlayer'
+import Icon from 'react-native-vector-icons/FontAwesome'
+
+function Players({navigation}){
     return(
 
             <Container>
 
+                    <ConteinerMenu>
+                    <TouchBack>
+                        <Icon name="chevron-left" size={20} color="#FFF"
+                                onPress={() => navigation.navigate('LogIn')}
+                        />
+
+                    </TouchBack>
+                 <Text>Players</Text>
+                 </ConteinerMenu>   
 
 
 
@@ -54,4 +64,4 @@ function Home(){
     );}
 
 
-export default Home;
+export default Players;
